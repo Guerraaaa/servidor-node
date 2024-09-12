@@ -10,3 +10,5 @@
     > o __Route__ chama o __CONTROLLER__;
     > o __Controller__ chama o __SERVICE__;
     > o __Service__ manda para o banco de dados.
+
+- Estamos utilizando o JEST.js para fazer testes unitarios.

@@ -2,9 +2,16 @@ import { Request, Response } from "express";
 import { UserService } from "../services/UserService";
 
 // Controller serve para validação dos dados que vão ser enviados para o service
-const userService = new UserService();
 export class UserController {
+  //vamos precisar instanciar o nosso service, porque não queremos testá-lo novamente.
+  userservice: UserService;
+  constructor(userService = new UserService()) {
+    this.userservice = userService;
+  }
+
+  //Regras de validações e operações.
   createUser = (req: Request, res: Response) => {
+    const userService = new UserService();
     const user = req.body;
 
     if (!user.name)
@@ -20,6 +27,7 @@ export class UserController {
   };
   deleteUser = (req: Request, res: Response) => {
     const paramsUser = req.params;
+    const userService = new UserService();
     const db = userService.deleteUser(paramsUser.name);
     console.log(db);
 
