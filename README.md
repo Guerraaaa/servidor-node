@@ -12,3 +12,7 @@
     > o __Service__ manda para o banco de dados.
 
 - Estamos utilizando o JEST.js para fazer testes unitarios.
+    > npm i -D jest ts-jest @types/jest
+    - configuração do jest.js precisamos alterar o testMatch e o preset para funcionar corretamente com o typescript.
+    - testMatch: ["**/?(*.)+(spec|test).[tj]s?(x)"]
+    - preset: "ts-jest" 
